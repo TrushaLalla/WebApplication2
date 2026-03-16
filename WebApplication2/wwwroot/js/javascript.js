@@ -1,4 +1,7 @@
-﻿const container = document.querySelector('.container');
+﻿import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+
+const container = document.querySelector('.container');
 const loginLink = document.querySelector('.SignInLink');
 const registerLink = document.querySelector('.SignUpLink');
 
@@ -112,3 +115,57 @@ document.querySelectorAll('.otp-input').forEach((input, index, inputs) => {
         if (e.key === 'Backspace' && this.value === '' && index > 0) inputs[index - 1].focus();
     });
 });
+
+
+
+//---------------------------------FIREBASE CONFIG--------------------------------------------------------
+/*<script type="module" src="~/js/javascript.js"></script>*/
+
+
+
+//const submit = document.getElementById('register-btn');
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCFay_u390Jvxxb5fnLgolIC-o98Tr5U0s",
+    authDomain: "webapplication2-c4aa6.firebaseapp.com",
+    projectId: "webapplication2-c4aa6",
+    storageBucket: "webapplication2-c4aa6.firebasestorage.app",
+    messagingSenderId: "621050499658",
+    appId: "1:621050499658:web:f7e5f2d4c439565b030cb3",
+    measurementId: "G-LB37R11R69"
+};
+
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+//button.youtube video
+
+
+
+
+
+
+document.getElementById('register-btn').addEventListener("click", function (event) {
+    event.preventDefault()
+    //inputs from youtube video
+    const email = document.getElementById('email2').value;
+    const password = document.getElementById('pass2').value;
+   
+    createUserWithEmailAndPassword(auth, email, password)
+   
+        .then((userCredential) => {
+            // Signed up
+            const user = userCredential.user;
+            alert("Account Created! " + user.email);
+           
+            // ...
+        })
+        .catch((error) => {
+            if (error.code === 'auth/email-already-in-use') {
+                alert("An account with this email already exists!");
+            } else {
+                alert(error.message);
+            }
+        });
+})

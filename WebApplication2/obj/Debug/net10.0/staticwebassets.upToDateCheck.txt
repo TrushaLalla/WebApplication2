@@ -1,7 +1,10 @@
 wwwroot\css\style.css
 wwwroot\favicon.ico
 wwwroot\images\ricoh-logo.png
+wwwroot\js\grand.html
 wwwroot\js\javascript.js
+wwwroot\js\login.js
+wwwroot\js\register.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
@@ -123,4 +126,7 @@ C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\wwwroot\lib\
 C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\wwwroot\css\style.css
 C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\wwwroot\favicon.ico
+C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\wwwroot\js\login.js
+C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\wwwroot\js\grand.html
 C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\wwwroot\js\javascript.js
+C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\wwwroot\js\register.js

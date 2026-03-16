@@ -298,12 +298,14 @@
             transition-delay: 1.2s;
         }
     </style>
+    @* <script type="module" src="login.js" defer></script> *@
+
 
 </head>
 <body>
 
 
-
+    @* //popups *@
 
     <div class="container">
         <div class="curved-shape"></div>
@@ -343,11 +345,12 @@
         <div class="form-box Login">
             <h2 class="animation" style="--D:0; --S:21; font-family: 'Arial'"><b>Login </b></h2>
             <form action="#">
-                <div class="input-box animation" style="--D:1; --S:22">
-                    <input type="text" placeholder="Username" id="uname1" required>
-                    <label for=""></label>
-                    <box-icon type='solid' name='user' color="gray"></box-icon>
-                </div>
+                
+                    <div class="input-box animation" style="--D:1; --S:22">
+                        <input type="email" placeholder="Email" id="email1" required>
+                        <label for=""></label>
+                        <box-icon name='envelope' type='solid' color="gray"></box-icon>
+                    </div>
 
                 <div class="input-box animation" style="--D:2; --S:23">
                     <input type="password" placeholder="Password" id="pass1" required>
@@ -406,24 +409,15 @@
             <br>
             <br>
             <br>
-            <form action="#">
+                    <form action="#" onsubmit="return false;">
 
-                <div class="input-box animation" style="--li:18; --S:1">
-                    <input type="text" placeholder="Username" id="uname2" required>
-                    <label for=""></label>
-                    <box-icon type='solid' name='user' color="gray"></box-icon>
-                </div>
 
                 <div class="input-box animation" style="--li:19; --S:2">
-                    <input type="email" placeholder="Email" id="email" required>
+                    <input type="email" placeholder="Email" id="email2" required>
                     <label for=""></label>
                     <box-icon name='envelope' type='solid' color="gray"></box-icon>
                 </div>
-                <div class="input-box animation" style="--li:19; --S:3">
-                    <input type="Phone" placeholder="Phone Number" id="phone" required>
-                    <label for=""></label>
-                    <box-icon name='phone' type='solid' color="gray"></box-icon>
-                </div>
+                
 
                 <div class="input-box animation" style="--li:19; --S:3">
                     <input type="password" placeholder="Create New Password" id="pass2" required>
@@ -431,8 +425,6 @@
                     <box-icon name='lock-alt' type='solid' color="gray"></box-icon>
                     <i class="bi-eye" id="togglePassword2" style="cursor:pointer;"></i>
                 </div>
-
-
 
 
                 <div class="input-box animation" style="--li:20; --S:4">
@@ -456,9 +448,10 @@
         </div>
 
 
-
-        <script src="~/js/javascript.js"></script>
-        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+        
+                    <script type="module" src="~/js/javascript.js"></script>
+        
+                    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
 </body>
 </html>
@@ -478,27 +471,5 @@
     })
 </script>
 
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyDjv6aqCYAi_28y4Jl6LRieq0N07DRJgDE",
-      authDomain: "webapplication2-b141e.firebaseapp.com",
-      projectId: "webapplication2-b141e",
-      storageBucket: "webapplication2-b141e.firebasestorage.app",
-      messagingSenderId: "247091072533",
-      appId: "1:247091072533:web:b388ea17730ee50b50081c",
-      measurementId: "G-3HW9XDP6PG"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-</script>
+            
     

@@ -94,5 +94,9 @@ C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\ne
 C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\WebApplication2.pdb
 C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\WebApplication2.genruntimeconfig.cache
 C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\ref\WebApplication2.dll
-C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\zmp8x9s54x-{0}-46dp68d1ca-46dp68d1ca.gz
 C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\k5y34cvxed-{0}-pwln7argjc-pwln7argjc.gz
+C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\WebApplication2.sourcelink.json
+C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\y9uh0mcv0v-{0}-1aq5wj7w1l-1aq5wj7w1l.gz
+C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\x0vi3qaj8p-{0}-y7867ah29w-y7867ah29w.gz
+C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\q7t4i9dhan-{0}-3r8b2a0bt1-3r8b2a0bt1.gz
+C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\zmp8x9s54x-{0}-3ktitcni33-3ktitcni33.gz
