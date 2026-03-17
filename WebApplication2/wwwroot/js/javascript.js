@@ -1,5 +1,5 @@
 ﻿import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+import { getAuth, GoogleAuthProvider,onAuthStateChanged,signInWithPopup,createUserWithEmailAndPassword, signInWithEmailAndPassword, browserLocalPersistence, browserSessionPersistence, setPersistence, signOut } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
 /*import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";*/
 
 const container = document.querySelector('.container');
@@ -134,10 +134,16 @@ const firebaseConfig = {
     measurementId: "G-LB37R11R69"
 };
 
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+//This forces a sign out every time the login page loads, so the previous session is cleared. 
+//Then when they login with Remember Me checked it will persist, and without it checked it will clear on browser close.
+// Set default persistence to session (clears when browser closes). so that browser doesnt redirect when rememebr me is unticked.
+// Sign out any existing session on page load
+signOut(auth).catch(() => { });
 
+// Set default persistence to session
+setPersistence(auth, browserSessionPersistence);
 //button.youtube video
 
 
@@ -209,21 +215,85 @@ login.addEventListener("click", function (event) {
     //inputs from youtube video
     const email = document.getElementById('email1').value;
     const password = document.getElementById('pass1').value;
+    const remember = document.getElementById('remember').checked;
+    //clear session for non-redierecting function, doesnt work thou
+    const persistence = remember ? browserLocalPersistence : browserSessionPersistence;
 
-    signInWithEmailAndPassword(auth, email, password)
+    setPersistence(auth, persistence)
+        .then(() => {
+            return signInWithEmailAndPassword(auth, email, password);
+        })
         .then((userCredential) => {
-            // Signed up 
             const user = userCredential.user;
-            localStorage.setItem("user", JSON.stringify({ uid: user.uid, email: user.email }));
-            //redirecting to blank page
             window.location.href = "/Grand";
-            // ...
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            alert(`Login failed: ${errorMessage}`);
-        })
-
+            alert("Login failed: " + error.message);
+        });
 });
+
+//    signInWithEmailAndPassword(auth, email, password)
+//        .then((userCredential) => {
+//            // Signed up
+//            const user = userCredential.user;
+//            localStorage.setItem("user", JSON.stringify({ uid: user.uid, email: user.email }));
+//            //redirecting to blank page
+//            window.location.href = "/Grand";
+//            // ...
+//        })
+//        .catch((error) => {
+//            const errorCode = error.code;
+//            const errorMessage = error.message;
+//            alert(`Login failed: ${errorMessage}`);
+//        })
+
+//});
+
+//google stuff below
+const provider = new GoogleAuthProvider();
+auth.languageCode = 'en';
+const google = document.getElementById("google-btn");
+google.addEventListener("click", function () {
+    signInWithPopup(auth, provider)
+        .then((result) => {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const user = result.user;
+            console.log(user);
+            window.location.href = "/Grand";
+            
+        }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+          
+            
+        });
+        
+});
+const user = auth.currentUser;
+function updateUserProfile(user) {
+    const grandusername = user.displayName;
+    const grandemail = user.email;
+    const grandprofile = user.photoURL;
+    //update the profile sectoin with user data
+    document.getElementById("grandusername").textContent = grandusername;
+    document.getElementById("grandemail").textContent = grandemail;
+    document.getElementById("grandprofile").src = grandprofile;
+
+}
+onAuthStateChange(auth, (user) => {
+    if (user) {
+        updateUserProfile(user);
+        const uid = user.uid;
+        return uid;
+    } else {
+        alert("create account & login");
+        window.location.href = "/auth/Login";
+    }
+});
+
+//google stuff end above
 

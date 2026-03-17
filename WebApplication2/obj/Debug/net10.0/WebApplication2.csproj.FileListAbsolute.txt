@@ -96,4 +96,4 @@ C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\ne
 C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\ref\WebApplication2.dll
 C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\WebApplication2.sourcelink.json
 C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\k5y34cvxed-{0}-00kifhwmia-00kifhwmia.gz
-C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\zmp8x9s54x-{0}-0rveki0yho-0rveki0yho.gz
+C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\zmp8x9s54x-{0}-oxn7vzpkcw-oxn7vzpkcw.gz
