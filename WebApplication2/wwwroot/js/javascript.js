@@ -1,5 +1,6 @@
 ﻿import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+/*import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";*/
 
 const container = document.querySelector('.container');
 const loginLink = document.querySelector('.SignInLink');
@@ -118,12 +119,10 @@ document.querySelectorAll('.otp-input').forEach((input, index, inputs) => {
 
 
 
-//---------------------------------FIREBASE CONFIG--------------------------------------------------------
+//---------------------------------REGISTER PAGE FIREBASE CONFIG--------------------------------------------------------
 /*<script type="module" src="~/js/javascript.js"></script>*/
 
 
-
-//const submit = document.getElementById('register-btn');
 
 const firebaseConfig = {
     apiKey: "AIzaSyCFay_u390Jvxxb5fnLgolIC-o98Tr5U0s",
@@ -151,6 +150,20 @@ document.getElementById('register-btn').addEventListener("click", function (even
     //inputs from youtube video
     const email = document.getElementById('email2').value;
     const password = document.getElementById('pass2').value;
+    // ====== PASSWORD VALIDATION ======
+    const errors = [];
+
+    if (password.length < 6 || password.length > 10) errors.push("• Be between 6 and 10 characters");
+    if (!/[A-Z]/.test(password)) errors.push("• Contain at least one uppercase letter");
+    if (!/[a-z]/.test(password)) errors.push("• Contain at least one lowercase letter");
+    if (!/[0-9]/.test(password)) errors.push("• Contain at least one number");
+    if (!/[\^$*.\[\]{}()?"!@#%&/\\,><':;|_~]/.test(password)) errors.push("• Contain at least one special character");
+
+    if (errors.length > 0) {
+        alert("Password must:\n" + errors.join("\n"));
+        return;
+    }
+
    
     createUserWithEmailAndPassword(auth, email, password)
    
@@ -169,3 +182,48 @@ document.getElementById('register-btn').addEventListener("click", function (even
             }
         });
 })
+//----------------------------LOGIN PAGE FIREBASE----------------------------------------------------------------------------------------------------
+  
+
+//const firebaseConfig = {
+//    apiKey: "AIzaSyCFay_u390Jvxxb5fnLgolIC-o98Tr5U0s",
+//    authDomain: "webapplication2-c4aa6.firebaseapp.com",
+//    projectId: "webapplication2-c4aa6",
+//    storageBucket: "webapplication2-c4aa6.firebasestorage.app",
+//    messagingSenderId: "621050499658",
+//    appId: "1:621050499658:web:f7e5f2d4c439565b030cb3",
+//    measurementId: "G-LB37R11R69"
+//};
+
+//const app = initializeApp(firebaseConfig);
+//const auth = getAuth(app);
+
+//button.youtube video
+
+
+
+
+const login = document.getElementById('login-btn');
+login.addEventListener("click", function (event) {
+    event.preventDefault()
+    //inputs from youtube video
+    const email = document.getElementById('email1').value;
+    const password = document.getElementById('pass1').value;
+
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed up 
+            const user = userCredential.user;
+            localStorage.setItem("user", JSON.stringify({ uid: user.uid, email: user.email }));
+            //redirecting to blank page
+            window.location.href = "/Grand";
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(`Login failed: ${errorMessage}`);
+        })
+
+});
+
