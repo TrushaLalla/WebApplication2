@@ -1,5 +1,5 @@
 ﻿import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
-import { getAuth, GoogleAuthProvider,onAuthStateChanged,signInWithPopup,createUserWithEmailAndPassword, signInWithEmailAndPassword, browserLocalPersistence, browserSessionPersistence, setPersistence, signOut } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, GithubAuthProvider,onAuthStateChanged,signInWithPopup,createUserWithEmailAndPassword, signInWithEmailAndPassword, browserLocalPersistence, browserSessionPersistence, setPersistence, signOut } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
 /*import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";*/
 
 const container = document.querySelector('.container');
@@ -273,27 +273,74 @@ google.addEventListener("click", function () {
         });
         
 });
-const user = auth.currentUser;
-function updateUserProfile(user) {
-    const grandusername = user.displayName;
-    const grandemail = user.email;
-    const grandprofile = user.photoURL;
-    //update the profile sectoin with user data
-    document.getElementById("grandusername").textContent = grandusername;
-    document.getElementById("grandemail").textContent = grandemail;
-    document.getElementById("grandprofile").src = grandprofile;
+//const user = auth.currentUser;
+//function updateUserProfile(user) {
+//    const grandusername = user.displayName;
+//    const grandemail = user.email;
+//    const grandprofile = user.photoURL;
+//    //update the profile sectoin with user data
+//    document.getElementById("grandusername").textContent = grandusername;
+//    document.getElementById("grandemail").textContent = grandemail;
+//    document.getElementById("grandprofile").src = grandprofile;
 
-}
-onAuthStateChange(auth, (user) => {
-    if (user) {
-        updateUserProfile(user);
-        const uid = user.uid;
-        return uid;
-    } else {
-        alert("create account & login");
-        window.location.href = "/auth/Login";
-    }
-});
+//}
+//onAuthStateChanged(auth, (user) => {
+//    if (user) {
+//        updateUserProfile(user);
+//        const uid = user.uid;
+//        return uid;
+//    } else {
+//        alert("create account & login");
+//        window.location.href = "/auth/Login";
+//    }
+//});
 
 //google stuff end above
+//github stuff below
+const githubprovider = new GithubAuthProvider();
+//auth.languageCode = 'en'; DONT NEED TO DUPLICATE IT
+
+document.getElementById("github-btn").addEventListener("click", function () {
+    signInWithPopup(auth, githubprovider)
+        .then((result) => {
+            // This gives you a github Access Token. You can use it to access the github API.
+            //const credential = GithubAuthProvider.credentialFromResult(result);
+            const user = result.user;
+            console.log(user);
+            window.location.href = "/Grand";
+
+        }).catch((error) => {
+            // Handle Errors here
+            const errorMessage = error.message;
+            alert("Github login failed: " + error.message);
+
+
+        });
+
+});
+//DONT NEED TO DUPLICATE IT
+
+//const user = auth.currentUser;
+//function updateUserProfile(user) {
+//    const grandusername = user.displayName;
+//    const grandemail = user.email;
+//    const grandprofile = user.photoURL;
+//    //update the profile sectoin with user data
+//    document.getElementById("grandusername").textContent = grandusername;
+//    document.getElementById("grandemail").textContent = grandemail;
+//    document.getElementById("grandprofile").src = grandprofile;
+
+//}
+
+//onAuthStateChanged(auth, (user) => {
+//    if (user) {
+//        updateUserProfile(user);
+//        const uid = user.uid;
+//        return uid;
+//    } else {
+//        alert("create account & login");
+//        window.location.href = "/auth/Login";
+//    }
+//});
+//github end
 
