@@ -310,3 +310,10 @@ input:-webkit-autofill:active {
     caret-color: #DA1745 !important;
     transition: background-color 5000s ease-in-out 0s;
 }
+/*-----------------------CAPS LOCK CODE---------------------------------*/
+#text1, #text2 {
+    display: none;
+    color: #DA1745;
+    font-size: 12px;
+    margin-top: 4px;
+}

@@ -344,3 +344,29 @@ document.getElementById("github-btn").addEventListener("click", function () {
 //});
 //github end
 
+//CAPS LOCKS CODE BELOW
+
+var password1 = document.getElementById("pass1");
+var text1 = document.getElementById("text1");
+password1.addEventListener("keyup", function (event) {
+
+    if (event.getModifierState("CapsLock")) {
+        text1.style.display = "block";
+    } else {
+        text1.style.display = "none"
+    }
+});
+
+var password2 = document.getElementById("pass2");
+var text2 = document.getElementById("text2");
+password2.addEventListener("keyup", function (event) {
+
+    if (event.getModifierState("CapsLock")) {
+        text2.style.display = "block";
+    } else {
+        text2.style.display = "none"
+    }
+});
+
+
+//CAPS LOCK CODE END

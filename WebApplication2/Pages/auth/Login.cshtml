@@ -299,7 +299,11 @@
         }
     </style>
         <script type="module" src="~/js/javascript.js"></script>
-
+       @*  //favicon *@
+        <link rel="apple-touch-icon" sizes="180x180" href="~/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="~/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="~/favicon-16x16.png">
+        <link rel="manifest" href="~/site.webmanifest">
 
 </head>
 <body>
@@ -354,12 +358,14 @@
 
                 <div class="input-box animation" style="--D:2; --S:23">
                     <input type="password" placeholder="Password" id="pass1" required>
+                    <p id="text1" style="display:none;">Caps lock is ON.</p>
                     <label for=""></label>
                     <box-icon name='lock-alt' type='solid' color="gray"></box-icon>
                     <i class="bi-eye" id="togglePassword" style="cursor:pointer;"></i>
 
                 </div>
-
+                <br />
+                <br />
 
                 <label for="remember" class="centered-flex animation" style="--D:1.8; --S:25">
                     <input type="checkbox" id="remember"> Remember me
@@ -421,6 +427,7 @@
 
                 <div class="input-box animation" style="--li:19; --S:3">
                     <input type="password" placeholder="Create New Password" id="pass2" required>
+                     <p id="text2" style="display:none;">Caps lock is ON.</p>
                     <label for=""></label>
                     <box-icon name='lock-alt' type='solid' color="gray"></box-icon>
                     <i class="bi-eye" id="togglePassword2" style="cursor:pointer;"></i>
