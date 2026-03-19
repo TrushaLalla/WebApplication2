@@ -97,5 +97,5 @@ C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\ne
 C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\tgyq2o6mdx-{0}-3r8b2a0bt1-3r8b2a0bt1.gz
 C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\8ugws988hw-{0}-8vp8b37llw-8vp8b37llw.gz
 C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\ocyj6kguxz-{0}-25bmi9wetb-25bmi9wetb.gz
-C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\zmp8x9s54x-{0}-zmol7wkzq5-zmol7wkzq5.gz
-C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\k5y34cvxed-{0}-geaaomuuw5-geaaomuuw5.gz
+C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\k5y34cvxed-{0}-opmuvvx72t-opmuvvx72t.gz
+C:\Users\Administrator\source\repos\WebApplication2\WebApplication2\obj\Debug\net10.0\compressed\zmp8x9s54x-{0}-1lygoi0sw5-1lygoi0sw5.gz

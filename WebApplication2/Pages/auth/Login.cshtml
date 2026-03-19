@@ -327,26 +327,26 @@
                         <label for="Emailspace"></label>
                         <box-icon name='envelope' type='solid' color="gray"></box-icon>
                     </div>
-                    <button class="btn SendOTP-btn" id="sendOtpBtn">Send OTP</button>
+                    <button class="btn SendOTP-btn" id="sendOtpBtn">Send</button>
                 </div>
 
-                <!-- STEP 2: OTP -->
+                <!-- STEP 2: SEND LINK -->
                 <div id="step2" style="display:none;">
-                    <h2>Enter OTP</h2>
-                    <p>We sent a 4-digit code to your email.</p>
-                    <div class="otp-boxes">
+                    <h2>Reset Link Sent!</h2>
+                    <p>We sent a reset password link to your email.  Check your inbox or spam folder.</p>
+                    @* <div class="otp-boxes">
                         <input type="text" maxlength="1" class="otp-input" inputmode="numeric">
                         <input type="text" maxlength="1" class="otp-input" inputmode="numeric">
                         <input type="text" maxlength="1" class="otp-input" inputmode="numeric">
                         <input type="text" maxlength="1" class="otp-input" inputmode="numeric">
-                    </div>
-                    <button class="btn forgot-btn">Verify OTP</button>
+                    </div> *@
+                     <button class="btn ok-btn" id="okBtn">Ok</button>
                 </div>
             </div>
         </div>
 
 
-        <div class="form-box Login">
+        <div class="form-box Login id= "logs">
             <h2 class="animation" style="--D:0; --S:21; font-family: 'Arial'"><b>Login </b></h2>
             <form action="#">
                 
@@ -432,7 +432,8 @@
                     <box-icon name='lock-alt' type='solid' color="gray"></box-icon>
                     <i class="bi-eye" id="togglePassword2" style="cursor:pointer;"></i>
                 </div>
-
+                                        <br />
+                                        <br />
 
                 <div class="input-box animation" style="--li:20; --S:4">
                     <button class="btn" type="submit" id="register-btn">Register</button>

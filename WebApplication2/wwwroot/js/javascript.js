@@ -117,6 +117,15 @@ document.querySelectorAll('.otp-input').forEach((input, index, inputs) => {
     });
 });
 
+//-----------------OK POP UP BUTTON-------------------------
+
+
+document.getElementById("okBtn").addEventListener("click", function () {
+    document.getElementById("forgotOverlay").classList.remove("active");
+    document.getElementById("step1").style.display = "block";
+    document.getElementById("step2").style.display = "none";
+});
+
 
 
 //---------------------------------REGISTER PAGE FIREBASE CONFIG--------------------------------------------------------
