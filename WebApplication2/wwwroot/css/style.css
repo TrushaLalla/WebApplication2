@@ -189,6 +189,47 @@ html {
 /*forgot password cssssssssssssssssssssssssssssssssssssssssssssss*/
 
 /* Forgot Password Popup */
+.forgot-popup h2, .forgot-popup p {
+    color: #ffffff;
+}
+/*making pop up email input white --above*/
+.ok-btn {
+    position: relative;
+    width: 130PX;
+    height: 34px;
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #DA1745;
+    padding: 10px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    overflow: hidden;
+    z-index: 1;
+    padding: 8px 10px;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .ok-btn::before {
+        content: "";
+        position: absolute;
+        height: 300%;
+        width: 100%;
+        background: linear-gradient(#25252b, #DA1745, #25252b, #DA1745);
+        top: -100%;
+        left: 0;
+        z-index: -1;
+        transition: .5s;
+    }
+
+    .ok-btn:hover::before {
+        top: 0;
+    }
+
+/*OK BUTTON above*/
 .forgot-overlay {
     position: absolute;
     inset: 0;

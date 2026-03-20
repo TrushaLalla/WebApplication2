@@ -1,5 +1,5 @@
 ﻿import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
-import { getAuth, GoogleAuthProvider, GithubAuthProvider,onAuthStateChanged,signInWithPopup,createUserWithEmailAndPassword, signInWithEmailAndPassword, browserLocalPersistence, browserSessionPersistence, setPersistence, signOut } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, GithubAuthProvider, onAuthStateChanged, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, browserLocalPersistence, browserSessionPersistence, setPersistence, sendPasswordResetEmail,signOut } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
 /*import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";*/
 
 const container = document.querySelector('.container');
@@ -92,6 +92,8 @@ function showMsg() {
 //forgot password jsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 document.getElementById('forgotLink').addEventListener('click', function (e) {
     e.preventDefault();
+    document.getElementById('step1').style.display = 'block';
+    document.getElementById('step2').style.display = 'none';
     document.getElementById('forgotOverlay').classList.add('active');
 });
 
@@ -126,7 +128,17 @@ document.getElementById("okBtn").addEventListener("click", function () {
     document.getElementById("step2").style.display = "none";
 });
 
-
+document.getElementById('okBtn').addEventListener('click', function () {
+    const email = document.getElementById('Emailspace').value;
+    sendPasswordResetEmail(auth, email)
+        .then(() => {
+            document.getElementById('step1').style.display = 'none';
+            document.getElementById('step2').style.display = 'block';
+        })
+        .catch((error) => {
+            alert("Error: " + error.message);
+        });
+});
 
 //---------------------------------REGISTER PAGE FIREBASE CONFIG--------------------------------------------------------
 /*<script type="module" src="~/js/javascript.js"></script>*/
