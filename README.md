@@ -5,3 +5,14 @@ Co‑developed the login and authentication system for an internal AI analysis a
 Requirements are to have the login and register to be prevented from SQL injections. Initially could only upload 1 document at a time. Now multiple documents.
 <h2><b>Impact</b></h2>
 Automates the process of manually sending out, signing and reviewing documents. Gemini AI integrated for further reviewing of pros and cons for businesses and organization use. Includes plans for further chatting with AI.
+<h2><b>Frameworks Used:</b></h2>
+HTML<br>
+CSS<br>
+JS<br>
+SQL<br>
+C#<br>
+Visual Studio<br>
+Node.js<br>
+React<br>
+Firebase<br>
+Supabase
